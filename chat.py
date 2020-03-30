@@ -1,5 +1,32 @@
-import os, sys
-import subprocess
-from subprocess import check_output
+import tkinter
 from tkinter import *
-from tkinter import messagebox
+import os
+window = tkinter.Tk()
+window.title("Chat box")
+window.geometry('420x514')
+l = Label(window, text=' ', font=('Comic Sans MS',50))
+l.grid(column=0,row=0)
+l1= Label(text= ' ',font=('Arial Bold',70))
+l1.grid(column=0,row=5)
+l2= Label(text= ' ',font=('Arial Bold',70))
+l2.grid(column=0,row=10)
+l3= Label(text= ' ',font=('Arial Bold',70))
+l3.grid(column=0,row=15)
+l4= Label(text= ' ',font=('Arial Bold',70))
+l4.grid(column=0,row=18)
+mes=' '
+def message():
+    m =Entry(window,width=130,bg='white')
+    m.grid(column=0,row=18)
+    mes = " " + m.get()
+    os.delay(200)
+    l.configure(text="Your message is ", font=('Comic Sans MS',15))
+    l1.configure(text=mes,font=('Comic Sans MS',20))
+#    disp1 = Label(window, text ="Your message is ", font=("Comic Sans MS",15))
+#    disp2=Label(window,text=mes,font=("Comic Sans MS",20))
+#    disp1.grid(column=0,row=0)
+#    disp2.grid(column=0,row=2)
+#    a= str(input('\n[?] Enter the message here \n> '))
+b1= Button(window, text="                                               Click here to type                                                           " , command=message)
+b1.grid(column=0,row=18)
+print(mes)
